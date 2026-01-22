@@ -3,134 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <span>Jashua B. Obina</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#home">Home</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#certificates">Certificates</a></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#projects">Projects</a></div>
-                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#">Contact Us</a></div>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    <header>
+        <div class="logo">
+            <span>Jashua B. Obina</span>
         </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#certificates">Certificates</a>
-                <a href="#projects">Projects</a>
-                <a href="#">Contact Me</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
         </div>
-    </nav>
+    </header>
 
     <section id="home">
-        <div class="main-container">
-            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                <img src="src/profile.jpg" alt="">
+        <div class="home-container">
+            <div class="image">
+                <img src="src/profile.jpg" alt="Profile Image">
             </div>
             <div class="content">
-                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Jashua</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">A 3rd year IT Student at Panpacific University</p>
-                <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                    <a href="https://github.com/ethickal"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.facebook.com/its.kazehazeaae/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/jashua-obina-769592205/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-                    <a href="src/cv.pdf" download>
-                        <button>Download CV</button>
-                    </a>
-                </div>
+                <h1>Hello, I'm <span>Jashua</span></h1>
+                <p>IT Graduate at Panpacific University</p>
+                <a href="src/JashuaObina.pdf" class="btn" download>Download CV</a>
             </div>
         </div>
     </section>
 
-<section id="about">
-    <h1>About Me</h1>
-    <p>I’m Jashua B. Obina, a passionate and motivated 3rd-year IT student with a strong enthusiasm for coding and continuous learning. I am seeking an internship opportunity to apply my academic knowledge, gain hands-on experience, and contribute effectively to a team’s success.</p>
-    <h2>Front-end Development</h2>
-    <ul>
-        <li>JavaScript</li>
-        <li>HTML & CSS</li>
-        <li>React</li>
-    </ul>
-
-    <h2>Other Skill</h2>
-    <ul>
-        <li>Problem Solving</li>
-        <li>Time Management</li>
-        <li>Critical Thinking</li>
-    </ul>
-
-    <h2>Hobbies</h2>
-    <ul>
-        <li>Playing Online Games</li>
-        <li>Reading</li>
-        <li>Listening Music</li>
-        <li>Watching Movies</li>
-    </ul>
-</section>
-
-    </section>
-
-    <section id="certificates">
-        <h1>Certificates</h1>
-        <p>List of certifications achieved in software development and related fields.</p>
-        <div class="certificate-images">
-            <img src="src/codechumcert.png" alt="Code Chum Certificate">
-            <img src="src/dataanalytics.png" alt="Data Analytics Certificate">
-            <img src="src/networkingessen.png" alt="Networking Essentials Certificate">
-            <img src="src/introtocyb.png" alt="Introduction to Cybersecurity Certificate">
-        </div>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am Jashua B. Obina, an IT graduate from Panpacific University, with four months of part-time experience as a CCTV Installer, combining technical fieldwork experience with a strong foundation in IT and web development.</p>
     </section>
 
     <section id="projects">
-        <h1>Projects</h1>
-        <p>A showcase of my latest projects in web development and programming. Below are some of the projects I have worked on:</p>
-        <div class="project-images">
-            <div class="project-item">
+        <div class="projects-container">
+            <div class="project-item" onclick="openModal(this)">
                 <img src="src/recipe1.png" alt="Recipe Project">
-                <h2>A website to search the ingredients to make dish - Nov 2 2024</h2>
+                <h3>Recipe Finder</h3>
             </div>
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(this)">
                 <img src="src/study.png" alt="Study Project">
-                <h2>A Study planner for students - Dec 16 2024</h2>
+                <h3>Study Planner</h3>
             </div>
-            <div class="project-item">
+            <div class="project-item" onclick="openModal(this)">
                 <img src="src/capstone.png" alt="Capstone Project">
-                <h2>Capstone Project - Undergoing</h2>
+                <h3>Capstone Project</h3>
+            </div>
+            <div class="project-item" onclick="openModal(this)">
+                <img src="src/wib.png" alt="OJT Project">
+                <img src="src/wib (1).png" alt="OJT Project">
+                <h3>OJT Project</h3>
             </div>
         </div>
-    
+    </section>
 
+    <section id="certificates">
+        <h2>Certificates</h2>
+        <p>Here are some of the certifications I've earned in various fields:</p>
+        <div class="certificates-container">
+            <div class="certificate-item" onclick="openModal(this)">
+                <img src="src/codechumcert.png" alt="Code Chum Certificate">
+                <h3>Code Chum Certificate</h3>
+            </div>
+            <div class="certificate-item" onclick="openModal(this)">
+                <img src="src/dataanalytics.png" alt="Data Analytics Certificate">
+                <h3>Data Analytics Certificate</h3>
+            </div>
+            <div class="certificate-item" onclick="openModal(this)">
+                <img src="src/networkingessen.png" alt="Networking Essentials Certificate">
+                <h3>Networking Essentials Certificate</h3>
+            </div>
+            <div class="certificate-item" onclick="openModal(this)">
+                <img src="src/introtocyb.png" alt="Introduction to Cybersecurity Certificate">
+                <h3>Introduction to Cybersecurity</h3>
+            </div>
+            <div class="certificate-item" onclick="openModal(this)">
+                <img src="src/MicrosoftCertificate.png" alt="Microsoft Certificate">
+                <h3>Microsoft Certificate</h3>
+            </div>
+        </div>
+    </section>
 
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations or opportunities.</p>
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/xpqqbagp" method="POST">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({offset:0});
-    </script>
-    <script>
-        function hamburg(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(0px)"
-        }
-        function cancel(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(-500px)"
-        }
-    </script>
+    <footer>
+        <p>&copy; 2026 Jashua B. Obina</p>
+    </footer>
+
+    <!-- Modal for Image Fullscreen -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <div class="modal-content-container">
+            <img class="modal-content" id="modalImage">
+            <div id="caption"></div>
+            <!-- Navigation buttons to switch images -->
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
